@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.auth.activity.setting.SettingActivity">
+
+        <include
+            android:id="@+id/title_view"
+            layout="@layout/title_view" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f6"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_about"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/x2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x114"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x30"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textBlack"
+                        android:textSize="@dimen/x32"
+                        android:text="版本号"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_bbh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/x32"
+                        android:text="V1.0.0"
+                        android:textColor="@color/textBlack"
+                        android:paddingRight="@dimen/x25"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_qc"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/x2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x114"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x30"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textBlack"
+                        android:textSize="@dimen/x32"
+                        android:text="清除缓存"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_hc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/x32"
+                        android:text="0kb"
+                        android:textColor="@color/textBlack"
+                        android:paddingRight="@dimen/x25"
+                        />
+
+                </LinearLayout>
+
+
+
+                <com.coorchice.library.SuperTextView
+                    android:id="@+id/stv_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="退出登录"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x40"
+                    app:stv_corner="@dimen/x50"
+                    android:textStyle="bold"
+                    app:stv_solid="@color/orange_login"
+
+                    android:paddingTop="@dimen/x26"
+                    android:paddingBottom="@dimen/x26"
+
+                    android:layout_marginRight="@dimen/x125"
+                    android:layout_marginLeft="@dimen/x125"
+
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="@dimen/x248"
+
+
+
+
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

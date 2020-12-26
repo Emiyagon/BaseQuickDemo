@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">优益信</string>
+    <string name="network_load">loading...</string>
+    <string name="save_picture_failed">保存失败</string>
+    <string name="save_picture_success">图片成功保存至%s目录</string>
+
+    <string name="tv_phone_input">请输入手机号</string>
+    <string name="et_verify_text">请输入验证码</string>
+    <string name="tv_get_code">获取验证码</string>
+    <string name="tv_re_get_code">重新获取</string>
+    <string name="tv_login">登录</string>
+
+    <string name="check_text_1">我已阅读并同意</string>
+    <string name="check_text_2">《贷款协议》</string>
+    <string name="check_text_3">《服务协议》</string>
+    <string name="protocol_secret">《用户隐私协议》</string>
+</resources>

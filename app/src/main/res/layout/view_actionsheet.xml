@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10pt" >
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/actionsheet_top_normal"
+        android:gravity="center"
+        android:minHeight="@dimen/x85"
+        android:paddingTop="@dimen/x10"
+        android:paddingBottom="@dimen/x10"
+        android:paddingLeft="@dimen/x15"
+        android:paddingRight="@dimen/x15"
+        android:textColor="@color/actionsheet_gray"
+        android:textSize="@dimen/x27"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/sLayout_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/lLayout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x85"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/actionsheet_single_selector"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/actionsheet_blue"
+        android:textSize="@dimen/x36"
+        />
+
+</LinearLayout>

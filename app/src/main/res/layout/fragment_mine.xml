@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModule"
+            type="com.ahdz.oricalshelves.main.auth.fragment.mine.FragmentMinePresent" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f6"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+</layout>

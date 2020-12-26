@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:background="@mipmap/home_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x400">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:textSize="@dimen/x40"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/x60"
+            android:layout_marginBottom="@dimen/x30"
+
+            />
+
+        <ImageView
+            android:id="@+id/img_setting"
+            android:layout_marginTop="@dimen/x60"
+            android:layout_width="@dimen/x45"
+            android:layout_height="@dimen/x45"
+            android:src="@mipmap/img_setting"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x30"
+            />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/img_icon"
+            />
+
+        <TextView
+            android:id="@+id/tele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon"
+            android:textSize="@dimen/x32"
+            android:textColor="@color/white"
+            android:text="187****0069"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/x42"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

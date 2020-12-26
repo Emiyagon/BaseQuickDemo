@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+    <!--  仿iOS轮滑  -->
+    <declare-styleable name="androidWheelView">
+        <attr name="awv_textsize" format="integer" />
+        <attr name="awv_lineSpace" format="float" />
+        <attr name="awv_centerTextColor" format="integer" />
+        <attr name="awv_outerTextColor" format="integer" />
+        <attr name="awv_dividerTextColor" format="integer" />
+        <attr name="awv_itemsVisibleCount" format="integer" />
+        <attr name="awv_isLoop" format="boolean" />
+        <attr name="awv_initialPosition" format="integer" />
+        <attr name="awv_scaleX" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="PayPsdInputView">
+
+        <attr name="maxCount" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="bottomLineColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="divideLineWidth" format="dimension" />
+        <attr name="divideLineColor" format="color" />
+        <attr name="rectAngle" format="dimension" />
+        <attr name="focusedColor" format="color"/>
+        <attr name="psdType" format="enum">
+            <enum name="weChat" value="0" />
+            <enum name="bottomLine" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="SVCircleProgressBar">
+        <attr name="svprogress_roundColor" format="color"/>
+        <attr name="svprogress_roundProgressColor" format="color"/>
+        <attr name="svprogress_roundWidth" format="dimension"/>
+        <attr name="svprogress_max" format="integer"/>
+        <attr name="svprogress_style">
+            <enum name="STROKE" value="0"/>
+            <enum name="FILL" value="1"/>
+        </attr>
+
+    </declare-styleable>
+
+
+    <!-- 垂直滚动Text -->
+    <declare-styleable name="VerticalScrollTextView">
+        <attr name="vst_sleepTime" format="integer"/>
+        <attr name="vst_animDuration" format="integer"/>
+        <attr name="vst_textSize" format="dimension"/>
+        <attr name="vst_textColor" format="color"/>
+        <attr name="vst_singleLine" format="boolean"/>
+        <attr name="vst_scrollOrientation">
+            <enum name="up" value="0"/>
+            <enum name="down" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

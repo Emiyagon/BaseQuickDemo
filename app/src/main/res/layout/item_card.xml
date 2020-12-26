@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/x10"
+            app:cardElevation="@dimen/x2"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_marginBottom="@dimen/x5"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginRight="@dimen/x30"
+            >
+
+            <RelativeLayout
+                android:padding="@dimen/x20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/needPay"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x70">
+
+                    <ImageView
+                        android:id="@+id/icon_iv"
+                        android:src="@mipmap/ic_launcher"
+
+                        android:layout_width="@dimen/x50"
+                        android:layout_height="@dimen/x50" />
+
+                    <TextView
+                        android:id="@+id/icon_name_tv"
+                        android:text="有钱花"
+                        android:gravity="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/x24"
+                        android:layout_marginLeft="@dimen/x15"
+                        android:layout_marginRight="@dimen/x15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/item_tag"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4D4D"
+                        android:textSize="@dimen/x20"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/bottom_tip_2"
+                        android:text="5000人已申请"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#FF4D4D"
+                        android:textSize="@dimen/x20"
+                        android:layout_marginRight="@dimen/x20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/line_color"
+                    android:layout_below="@id/needPay"
+                    android:id="@+id/linex"
+
+                    />
+
+                <TextView
+                    android:layout_below="@id/linex"
+                    android:id="@+id/quota_tv"
+                    android:text="5000-3万"
+                    android:textColor="@color/textBlack"
+                    android:textSize="@dimen/x36"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x15"
+                    android:layout_marginBottom="@dimen/x15" />
+
+                <TextView
+                    android:layout_below="@id/quota_tv"
+                    android:id="@+id/time_tv"
+                    android:text="1-6月"
+                    android:textColor="@color/color999999"
+                    android:textSize="@dimen/x20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/interest_tv"
+                    android:text="日息0.025%"
+                    android:textColor="@color/color999999"
+                    android:textSize="@dimen/x20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_below="@id/quota_tv"
+                    android:layout_toRightOf="@id/time_tv" />
+
+
+                <TextView
+                    android:id="@+id/bottom_tip_1"
+                    android:text="无视黑白，不上征信"
+                    android:textColor="@color/color999999"
+                    android:textSize="@dimen/x20"
+                    android:layout_marginBottom="@dimen/x20"
+                    android:layout_below="@id/interest_tv"
+
+                    android:layout_marginTop="@dimen/x15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <com.coorchice.library.SuperTextView
+                    android:id="@+id/stv_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="去申请"
+                    android:textColor="@color/orange_login"
+                    android:textSize="14sp"
+                    app:stv_corner="@dimen/x10"
+                    android:paddingRight="@dimen/x20"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingBottom="@dimen/x10"
+                    android:paddingTop="@dimen/x10"
+                    app:stv_solid="@color/transparent"
+                    app:stv_stroke_color="@color/orange_login"
+                    app:stv_stroke_width="@dimen/x2"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/linex"
+                    android:layout_marginTop="@dimen/x95" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

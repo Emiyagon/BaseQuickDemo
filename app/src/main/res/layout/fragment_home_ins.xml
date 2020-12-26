@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModule"
+            type="com.ahdz.oricalshelves.main.auth.fragment.home.FragmentHomePresent" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f6"
+        >
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rl_shops"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:paddingBottom="@dimen/x15"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                />
+
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <ImageView
+
+            android:layout_width="@dimen/x54"
+            android:layout_height="@dimen/x54"
+            android:src="@mipmap/ic_splash"
+            android:layout_centerInParent="true"
+            android:id="@+id/clicl"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+</layout>

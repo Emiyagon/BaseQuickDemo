@@ -1,0 +1,141 @@
+apply plugin: 'com.android.application'
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+    defaultConfig {
+        applicationId "com.youyixin.loan"
+        minSdkVersion rootProject.ext.versions.sdkMinVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.appVersionCode
+        versionName rootProject.ext.versions.appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    //*********
+    signingConfigs {
+        release {
+            storeFile file("ovshalves.jks")//
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+        }
+    }
+
+/*    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }*/
+
+    //****
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    dataBinding {
+        enabled = true
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        mavenCentral()
+    }
+
+}
+
+/**
+ * apk打包
+ */
+
+android.applicationVariants.all { variant ->
+    def buildType = variant.buildType.name
+    def fileName
+    def createTime = new Date().format("YYYY-MM-dd-HH-mm-ss", TimeZone.getTimeZone("GMT+08:00"))
+    def createTimeShort = new Date().format("YYYY-MM-dd", TimeZone.getTimeZone("GMT+08:00"))
+
+    variant.outputs.all {
+        if (buildType == "release") {
+            variant.getPackageApplicationProvider().get().outputDirectory = new File(project.rootDir.absolutePath + "/apks/${buildType}/$createTimeShort")
+//                fileName = "channelCode_${variant.flavorName}_v${variant.versionName}_${createTime}_${buildType}.apk"
+            fileName = "${variant.flavorName}_v${createTime}.apk"
+            it.outputFileName = fileName
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+//    implementation 'com.android.support:multidex:1.0.0'
+    //lifecycle扩展
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.yanzhenjie.permission:support:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'com.kaopiz:kprogresshud:1.1.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //bugly 新版虫子显示
+    implementation 'cat.ereza:customactivityoncrash:2.2.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    //chuck
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+    //liveEventBus
+    implementation 'com.jeremyliao:live-event-bus:1.4.0'
+//lifecycle扩展
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    //使用Lottie库播放动画
+    implementation 'com.airbnb.android:lottie:1.0.1'
+    implementation 'android.lib.snackbar:Snackbar:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //权限申请适配
+    implementation 'com.lovedise:permissiongen:0.0.6'
+    implementation 'pub.devrel:easypermissions:1.0.1'
+
+    //  微信支付
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+    // 沉浸式
+    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    //多功能textview
+    api 'com.github.chenBingX:SuperTextView:v3.1.1'
+
+//    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
+//    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-15'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    implementation 'com.scwang.smart:refresh-header-material:2.0.1'
+    api project(path: ':forempty')    //谷歌刷新头
+}

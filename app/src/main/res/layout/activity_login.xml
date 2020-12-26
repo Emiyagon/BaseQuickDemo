@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModule"
+            type="com.ahdz.oricalshelves.main.login.LoginPresent" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.login.LoginActivity">
+        <androidx.core.widget.NestedScrollView
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                >
+                <ImageView
+                    android:layout_marginTop="@dimen/x200"
+                    android:id="@+id/ic_logo"
+                    android:layout_width="@dimen/x160"
+                    android:layout_height="@dimen/x160"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/x100"
+                    android:src="@mipmap/ic_splash" />
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x100"
+
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/x4"
+                        android:paddingRight="@dimen/x30"
+                        android:layout_marginLeft="@dimen/x80"
+                        android:layout_marginRight="@dimen/x80"
+                        >
+                        <EditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:hint="@string/tv_phone_input"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:layout_marginLeft="@dimen/x4"
+                            android:textColor="@color/color333333"
+                            android:textColorHint="@color/color999999"
+                            android:textSize="@dimen/x28"
+                            android:text="@{viewModule.telePhone}"
+                            />
+                        <ImageView
+                            android:id="@+id/iv_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/x60"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@id/et_phone"
+                            android:layout_alignBottom="@id/et_phone"
+                            android:layout_marginRight="@dimen/x2"
+                            android:src="@mipmap/ic_delete"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_color"
+                        android:layout_marginLeft="@dimen/x80"
+                        android:layout_marginRight="@dimen/x80"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x100"
+                        android:visibility="gone"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/x2"
+                        android:layout_marginTop="@dimen/x20"
+
+                        >
+
+
+<!--                        android:text="@{viewModule.vertifyCode}"  -->
+                        <EditText
+                            android:id="@+id/et_input_code"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="@dimen/x60"
+                            android:layout_alignLeft="@id/et_phone"
+
+                            android:layout_marginLeft="@dimen/x2"
+                            android:background="@null"
+                            android:hint="@string/et_verify_text"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:padding="@dimen/x3"
+                            android:textColor="@color/color333333"
+                            android:textColorHint="@color/color999999"
+                            android:textSize="@dimen/x28"/>
+
+                        <ImageView
+                            android:id="@+id/img_vertifycode"
+                            android:layout_width="@dimen/x170"
+                            android:layout_height="@dimen/x70"
+                            android:onClick="@{viewModule::changeCode}"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_color"
+                        android:layout_marginLeft="@dimen/x80"
+                        android:layout_marginRight="@dimen/x80"
+                        />
+                    <LinearLayout
+
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_marginBottom="@dimen/x70"
+                        android:id="@+id/linear_check"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginLeft="@dimen/x40"
+                        android:layout_marginRight="@dimen/x80"
+                        android:paddingLeft="@dimen/x40"
+
+                        >
+                        <CheckBox
+                            android:id="@+id/cb_select_pl"
+                            android:textSize="@dimen/x30"
+                            android:button="@drawable/cb_agree_privacy_bg"
+                            android:textColor="@color/color333333"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:padding="@dimen/x12"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/text_1"
+                            android:text="@string/check_text_1"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:clickable="false"
+                            />
+
+                        <TextView
+                            android:id="@+id/text_2"
+                            android:text="@string/protocol_secret"
+                            android:textColor="@color/common_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:maxLines="2"
+                            android:gravity="center"
+
+                            />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <com.coorchice.library.SuperTextView
+                    android:id="@+id/stv_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x100"
+                    android:gravity="center"
+                    android:text="登录"
+                    android:layout_marginTop="@dimen/x40"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x40"
+                    app:stv_corner="@dimen/x50"
+                    app:stv_solid="@color/gray_login"
+                    android:layout_marginLeft="@dimen/x110"
+                    android:layout_marginRight="@dimen/x110"
+                    android:clickable="false"
+
+                    />
+
+                <TextView
+                    android:id="@+id/to_onekey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="一键登录"
+                    android:textColor="@color/transparent"
+                    android:textSize="@dimen/x32"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/x30"
+                    android:padding="@dimen/x10"
+                    android:visibility="invisible"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/transparent"
+                    android:gravity="center"
+                    android:textSize="@dimen/x24"
+                    android:text="这里会显示log日志"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>
