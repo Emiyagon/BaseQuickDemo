@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
                 .setTimestamp(new Date().getTime())
                 .setDevceType(1)
-                .setChannelCode(BuildConfig.FLAVOR);
+                .setChannelCode("fups");
         UserApi.registerDevice(regiterDeviceRequest, new io.reactivex.Observer<BaseResponse<String>>() {
             @Override
             public void onSubscribe(Disposable d) {

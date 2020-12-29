@@ -405,8 +405,8 @@ public abstract class BaseActivity<SV extends ViewDataBinding> extends AppCompat
      */
     public MProgressDialog showDialog(String msg) {
         if (progressDialog == null) {
-            progressDialog = new MProgressDialog(this);
-            progressDialog = progressDialog.createLoadingDialog(msg);
+            progressDialog = new MProgressDialog(this)
+                    .createLoadingDialog(msg);
             progressDialog.show();
         } else if (!progressDialog.isShowing()) {
             progressDialog.show();

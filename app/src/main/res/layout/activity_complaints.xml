@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/titlt_view" layout="@layout/title_view" />
+
+        <EditText
+            android:id="@+id/et_input_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x450"
+            android:hint="请输入反馈意见"
+            android:gravity="start"
+            android:padding="@dimen/x20"
+            android:background="@color/white"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请上传反馈所需图片(最多三张,非必填)"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_spliet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            />
+
+        <com.coorchice.library.SuperTextView
+            android:id="@+id/stv_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x40"
+            app:stv_corner="@dimen/x50"
+            android:textStyle="bold"
+            app:stv_solid="@color/orange_login"
+
+            android:paddingTop="@dimen/x26"
+            android:paddingBottom="@dimen/x26"
+
+            android:layout_marginRight="@dimen/x125"
+            android:layout_marginLeft="@dimen/x125"
+
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/x108"
+
+            />
+    </LinearLayout>
+</layout>

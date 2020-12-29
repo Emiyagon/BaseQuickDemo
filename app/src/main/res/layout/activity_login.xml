@@ -208,12 +208,12 @@
                     android:layout_height="wrap_content"
 
                     android:text="一键登录"
-                    android:textColor="@color/transparent"
+                    android:textColor="@color/textBlack"
                     android:textSize="@dimen/x32"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/x30"
                     android:padding="@dimen/x10"
-                    android:visibility="invisible"
+                    android:visibility="visible"
                     />
 
                 <TextView

@@ -25,14 +25,6 @@ public class MProgressDialog extends Dialog {
         this.context=context;
     }
 
-    public static final String P1 = "loading.json";
-    public static final String P2= "custom_load.json";
-    public static final String P3 = "rotate.json";
-    public static final String P4 = "laugh.json";
-    public static final String P5 = "hourglass.json";
-    public static final String P6 = "spinner.json";
-    public static final String P7 = "spinner_upload.json";
-
 
     public MProgressDialog(Context context, int theme) {
         super(context, theme);

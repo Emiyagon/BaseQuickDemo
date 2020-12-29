@@ -15,15 +15,16 @@ import com.ahdz.oricalshelves.api.BaseResponse;
 import com.ahdz.oricalshelves.api.UserApi;
 import com.ahdz.oricalshelves.base.BaseActivity;
 import com.ahdz.oricalshelves.databinding.ActivitySettingBinding;
+import com.ahdz.oricalshelves.main.auth.activity.complaints.ComplaintsActivity;
 import com.ahdz.oricalshelves.main.login.LoginActivity;
 import com.ahdz.oricalshelves.util.AppUtils;
 import com.ahdz.oricalshelves.util.FileCacheUtils;
 import com.ahdz.oricalshelves.util.SPUtil;
 import com.ahdz.oricalshelves.view.dialog.ActionSheetDialog;
 import com.ahdz.oricalshelves.view.dialog.MyAlertDialog;
-import com.lzy.forempty.tools.PictureSelector;
-import com.lzy.forempty.tools.config.PictureConfig;
-import com.lzy.forempty.tools.config.PictureMimeType;
+//import com.lzy.forempty.tools.PictureSelector;
+//import com.lzy.forempty.tools.config.PictureConfig;
+//import com.lzy.forempty.tools.config.PictureMimeType;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -74,9 +75,13 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
             mBindingView.tvHc.setText("0.00KB");
         }
 
+        mBindingView.llTo.setOnClickListener(v -> {
+            startActivity(new Intent(SettingActivity.this, ComplaintsActivity.class));
+        });
+
         mBindingView.llAbout.setOnClickListener(v -> {
 
-            PictureSelector.create(this)
+            /*PictureSelector.create(this)
                     .openGallery(PictureMimeType.ofImage())// 全部.PictureMimeType.ofAll()、图片.ofImage()、视频.ofVideo()、音频.ofAudio()
                     .theme( R.style.picture_QQ_style)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
                     .maxSelectNum(9)// 最大图片选择数量
@@ -109,7 +114,7 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
                     //.cropWH()// 裁剪宽高比，设置如果大于图片本身宽高则无效
                     .rotateEnabled(true) // 裁剪是否可旋转图片
                     .scaleEnabled(true)// 裁剪是否可放大缩小图片
-                    .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
+                    .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code*/
 
         });
 

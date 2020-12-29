@@ -110,12 +110,6 @@ public class LoginPresent extends BasePresenter  {
 
     public void OnProtrul() {
         Map<String, Object> json = new HashMap<>();
-        /**
-         *      loginRequest.phone = mEditPhoneNumber.value
-         *         loginRequest.sign = ""
-         *         loginRequest.verifyCode = mEditPhoneCode.value
-         *         loginRequest.channelCode = BuildConfig.FLAVOR
-         */
         json.put("compress", 1);
         UserApi.getSecretProtocol(json, new Observer<BaseResponse<SecretData>>() {
             @Override

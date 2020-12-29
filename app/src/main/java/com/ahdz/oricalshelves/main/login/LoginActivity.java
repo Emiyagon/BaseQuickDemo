@@ -55,7 +55,15 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> implements
         mBindingView.text1.setOnClickListener(v -> {
             mBindingView.cbSelectPl.setChecked(!mBindingView.cbSelectPl.isChecked());
         });
+
+        mBindingView.toOnekey.setOnClickListener(v -> {
+
+            // 一键登录
+
+        });
+
     }
+
 
 
 

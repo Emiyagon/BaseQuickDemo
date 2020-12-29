@@ -94,12 +94,15 @@
 
 
     <color name="purple">#9B71FF</color>
+    <color name="app_color_f6">#f6f6f6</color>
 
 
     <color name="click_empty">#cccccc</color>
     <color name="colorAAAAAA">#aaa</color>
     <!--标题颜色-->
 
+    <color name="app_color_white">#FFFFFF</color>
+    <color name="app_color_white_transparent">#E0DBDBDB</color>
 
     <color name="orange_login">#FD8713</color>
     <color name="gray_login">#eeeeee</color>
