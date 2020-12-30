@@ -5,7 +5,7 @@ import java.util.List;
 public class BaiHuiData {
 
     /**
-     * appName : 小山随心借
+     * appName : s
      * tips : ["日息0.020%起","最快10分钟放款"]
      * quota : 88888
      */
