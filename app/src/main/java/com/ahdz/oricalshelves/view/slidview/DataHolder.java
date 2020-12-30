@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 
 /**
  * Created by peacepassion on 15/8/23.
+ *  自定义tabview的修改者,可以通过这个对tabview做修改
  */
 public class DataHolder {
 
