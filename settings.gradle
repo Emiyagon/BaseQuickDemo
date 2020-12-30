@@ -1,2 +1,2 @@
-include ':app', ':forempty'
+include ':app'
 rootProject.name='OricalShelves'

@@ -35,40 +35,7 @@ public class SlidingTabLayout extends ViewGroup implements ViewPager.OnPageChang
     super(context, attrs, defStyleAttr);
   }
 
-  public interface OnItemClick {
-    void inChoose(int pos);
-  }
-  public void  setUpResources( List<DataHolder> dataHolders,OnItemClick onItemClick) {
-    for (int i = 0; i < dataHolders.size(); ++i) {
-      RelativeLayout v =
-              (RelativeLayout) LayoutInflater.from(getContext()).inflate(R.layout.unit, this, false);
-      final int j = i;
-      int finalI = i;
-      v.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-//          viewPager.setCurrentItem(j, false);
-          if (onItemClick != null) {
-            onItemClick.inChoose(finalI);
-          }
-        }
-      });
-      DataHolder dataHolder = dataHolders.get(i);
-      TextView tv = (TextView) v.findViewById(R.id.text);
-      tv.setText(dataHolder.title);
-      TextView tv2 = (TextView) v.findViewById(R.id.text_front);
-      tv2.setText(dataHolder.title);
-      tv2.setTextColor(dataHolder.titleTargetColor);
-      tv2.setAlpha(0);
-      ImageView iv = (ImageView) v.findViewById(R.id.image_bg);
-      iv.setImageDrawable(dataHolder.back);
-      ImageView iv2 = (ImageView) v.findViewById(R.id.image_front);
-      iv2.setImageDrawable(dataHolder.front);
-      iv2.setAlpha((float) 0);
-      viewHolders.add(new UnitViewHolder(tv, tv2, iv, iv2));
-      addView(v);
-    }
-  }
+
 
   public void setUpViewPager(final ViewPager viewPager, List<DataHolder> dataHolders) {
     viewPager.addOnPageChangeListener(this);

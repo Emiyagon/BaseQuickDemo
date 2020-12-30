@@ -56,12 +56,12 @@ public class HomePageActivity extends BaseActivity<ActivityHomePageBinding> {
 
         List<DataHolder> dataHolders = new ArrayList<>();
 
-        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_shouye_gray),
-                getResources().getDrawable(R.mipmap.hd_shouye_char), "首页", getResources().getColor(R.color.colorGary)));
-        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_shopping_gray),
-                getResources().getDrawable(R.mipmap.hd_shopping_char), "超市", getResources().getColor(R.color.colorGary)));
-        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_mine_gray),
-                getResources().getDrawable(R.mipmap.hd_mine_char), "我的", getResources().getColor(R.color.colorGary)));
+        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_shouye_gray), getResources().getDrawable(R.mipmap.hd_shouye_char),
+                "首页", getResources().getColor(R.color.colorGary)));
+        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_shopping_gray),  getResources().getDrawable(R.mipmap.hd_shopping_char),
+                "超市", getResources().getColor(R.color.colorGary)));
+        dataHolders.add(new DataHolder(getResources().getDrawable(R.mipmap.hd_mine_gray),  getResources().getDrawable(R.mipmap.hd_mine_char),
+                "我的", getResources().getColor(R.color.colorGary)));
 
         mBindingView.slidView.setUpViewPager( mBindingView.viewPager, dataHolders);
         mBindingView.viewPager.setOffscreenPageLimit(5);
