@@ -1,9 +1,14 @@
 package com.ahdz.oricalshelves.main.auth.fragment.home;
 
+import android.content.Intent;
+import android.graphics.Outline;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,16 +21,23 @@ import com.ahdz.oricalshelves.base.BaseFragment;
 import com.ahdz.oricalshelves.bean.BaiHuiData;
 import com.ahdz.oricalshelves.bean.Projects;
 import com.ahdz.oricalshelves.databinding.FragmentHomeInsBinding;
+import com.ahdz.oricalshelves.main.detail.MyWebviewActivity;
+import com.ahdz.oricalshelves.main.other.TimeActivity;
+import com.ahdz.oricalshelves.util.GlideImageLoader;
+import com.ahdz.oricalshelves.util.GlideUtil;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomepageFragment extends Fragment {
 
     private FragmentHomePresent present;
     private HomepageAdapter adapter;
     private FragmentHomeInsBinding mBindingView;
+    private List<String> mBannerList;
 
     public static HomepageFragment newInstance() {
         Bundle args = new Bundle();
@@ -51,15 +63,66 @@ public class HomepageFragment extends Fragment {
         adapter = new HomepageAdapter(getContext());
         present.OnHttp();
         present.GbHttp();
+        present.getBannerList();
 
-        present.projectsList.observe(this, projects -> {
+        present.bannerList.observe(getViewLifecycleOwner(), bannerList -> {
+//            adapter.setBanner(strings);
+            mBannerList = new ArrayList<>();
+            if (bannerList!=null && bannerList.size() > 0) {
+                mBindingView.title.banner.setVisibility(View.VISIBLE);
+                mBannerList.clear();
+                for (int i = 0; i < bannerList.size(); i++) {
+                    mBannerList.add(bannerList.get(i).getPictureUrl());
+                }
+                GlideUtil.putBannerImg(bannerList.get(bannerList.size()-1),mBindingView.title.imgLoader);
+            }else {
+                mBindingView.title.banner.setVisibility(View.GONE);
+            }
+
+            mBindingView.title.banner.setImages(mBannerList);
+            mBindingView.title.banner.setDelayTime(3500);
+            mBindingView.title.banner.setImageLoader(new GlideImageLoader());
+            mBindingView.title.banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mBindingView.title.banner.setOutlineProvider(new ViewOutlineProvider() {
+                    @Override
+                    public void getOutline(View view, Outline outline) {
+                        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), 16f);
+                    }
+                });
+                mBindingView.title.banner.setClipToOutline(true);
+            }
+
+            mBindingView.title.banner.setOnBannerListener(posT -> {
+                present.OnClickTo(bannerList.get(posT).getAppId()+"");
+            });
+
+            mBindingView.title.banner.startAutoPlay();
+
+        });
+
+
+        present.projectsList.observe(getViewLifecycleOwner(), projects -> {
             adapter.setList(projects);
         });
-        present.baihui.observe(this, baiHuiData -> {
-            adapter.setMuch(present.displayWithComma(baiHuiData.getQuota()+"") +".00");
+        present.baihui.observe(getViewLifecycleOwner(), baiHuiData -> {
+//            adapter.setBaiHui(baiHuiData);
+            mBindingView.title.tvMuch.setText(present.displayWithComma(baiHuiData.getQuota()+"")+".00");
+            mBindingView.title.stvL.setOnClickListener(v -> {
+                if (TextUtils.isEmpty(baiHuiData.getUrl())){
+                    startActivity(new Intent(getContext(), TimeActivity.class));
+                    return;
+                }
+                MyWebviewActivity.GoToService(getContext(),baiHuiData.getUrl(),0,"");
+            });
         });
-        present.gbList.observe(this, strings -> {
+        present.gbList.observe(getViewLifecycleOwner(), strings -> {
             adapter.setStrings(strings);
+            if ( strings.size() > 0) {
+                mBindingView.title.homeScrollText.setDataSource(strings);
+                mBindingView.title.homeScrollText.startPlay();
+            }
         });
 
 

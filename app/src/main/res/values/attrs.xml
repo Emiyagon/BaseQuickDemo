@@ -6,18 +6,7 @@
         <attr name="leftSwipe" format="boolean"/>
     </declare-styleable>
 
-    <!--  仿iOS轮滑  -->
-    <declare-styleable name="androidWheelView">
-        <attr name="awv_textsize" format="integer" />
-        <attr name="awv_lineSpace" format="float" />
-        <attr name="awv_centerTextColor" format="integer" />
-        <attr name="awv_outerTextColor" format="integer" />
-        <attr name="awv_dividerTextColor" format="integer" />
-        <attr name="awv_itemsVisibleCount" format="integer" />
-        <attr name="awv_isLoop" format="boolean" />
-        <attr name="awv_initialPosition" format="integer" />
-        <attr name="awv_scaleX" format="float" />
-    </declare-styleable>
+
 
     <declare-styleable name="PayPsdInputView">
 
@@ -60,5 +49,19 @@
             <enum name="up" value="0"/>
             <enum name="down" value="1"/>
         </attr>
+    </declare-styleable>
+
+
+<!--    仿iOS滚轮  -->
+    <declare-styleable name="LoopView">
+        <attr name="awv_textsize" format="integer" />
+        <attr name="awv_lineSpace" format="float" />
+        <attr name="awv_centerTextColor" format="integer" />
+        <attr name="awv_outerTextColor" format="integer" />
+        <attr name="awv_dividerTextColor" format="integer" />
+        <attr name="awv_itemsVisibleCount" format="integer" />
+        <attr name="awv_isLoop" format="boolean" />
+        <attr name="awv_initialPosition" format="integer" />
+        <attr name="awv_scaleX" format="float" />
     </declare-styleable>
 </resources>

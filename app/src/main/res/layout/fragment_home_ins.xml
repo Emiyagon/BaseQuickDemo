@@ -21,16 +21,26 @@
             android:id="@+id/srf"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rl_shops"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:paddingBottom="@dimen/x15"
-                android:scrollbars="none"
-                android:overScrollMode="never"
-                />
-
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <include android:id="@+id/title" layout="@layout/item_replace_tv" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rl_shops"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:paddingBottom="@dimen/x15"
+                        android:scrollbars="none"
+                        android:overScrollMode="never"
+                        />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
 
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
         <ImageView

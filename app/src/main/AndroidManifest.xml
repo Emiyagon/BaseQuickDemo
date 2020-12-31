@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
-        <activity android:name=".main.auth.activity.complaints.ComplaintsActivity"></activity>
+        <activity android:name=".main.other.TimeActivity"></activity>
+        <activity android:name=".main.auth.activity.complaints.ComplaintsActivity" />
         <activity
             android:name=".main.detail.MyWebviewActivity"
             android:screenOrientation="portrait" />

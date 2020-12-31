@@ -13,6 +13,7 @@ public class TimeUtil {
     public static final String NYR = "yyyy-MM-dd";
     public static final String YR = "MM-dd";
     public static final String SFM = "HH:mm:ss";
+    private static SimpleDateFormat df;
 
     /**
      *
@@ -35,6 +36,7 @@ public class TimeUtil {
         return df.format(time);
     }
 
+
     /**
      * 获取特定字段的时间
      * @param str
@@ -46,6 +48,51 @@ public class TimeUtil {
         return df.format(new Date());
     }
 
+    /**
+     *  把String型的字符串转换成特定格式的date类型
+     */
+    public static Date StringToDate(String dStr){
+        String sDate="2001.12.12-08.23.21";
+
+        df = new SimpleDateFormat(NYRSFM);
+
+        try {
+            Date d = df.parse(dStr);
+            return d;
+        } catch (ParseException pe) {
+
+            System.out.println(pe.getMessage());
+
+        }
+        return null;
+    }
+
+    /**
+     * Date转long型
+     */
+    public static Long DateToLong(Date date) {
+        return date.getTime();
+    }
+
+
+    /**
+     * long型转Date
+     */
+    public static Date LongToDate(long dateTime) {
+        return new Date(dateTime);
+    }
+
+    /**
+     *  两个时间段的区分 ,传入的时间都是 yyyy-MM-dd HH:mm:ss 这种格式的
+     * @param start  现在时间 ,
+     * @param end  要到达的时间 ,这个理论上远于上面的
+     * @return
+     */
+    public static long getSplxTimeCurrent(String start, String end) {
+//        Date d1 = StringToDate(start);
+//        Date d2 = StringToDate(end);
+        return DateToLong(StringToDate(end))-DateToLong(StringToDate(start));
+    }
 
     /**
      *

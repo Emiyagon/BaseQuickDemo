@@ -1,134 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
 
     <RelativeLayout
-
+        android:id="@+id/rl_pz"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/x400"
-            android:src="@mipmap/home_bg"
-            android:scaleType="fitXY"
-            />
-        <TextView
-            android:gravity="center"
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="首页"
-            android:textSize="@dimen/x40"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginTop="@dimen/x60"
-            android:layout_marginBottom="@dimen/x30"
-            />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/title_card"
-            android:layout_below="@id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x25"
-            app:cardCornerRadius="@dimen/x10"
-            app:cardElevation="@dimen/x3"
-            app:cardBackgroundColor="@color/white"
-            >
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <!--广播布局-->
-                <LinearLayout
 
-                    android:id="@+id/ll_scroll_text"
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x400"
+                android:src="@mipmap/home_bg"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="首页"
+                android:textSize="@dimen/x40"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/x60"
+                android:layout_marginBottom="@dimen/x30" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title_card"
+                android:layout_below="@id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x25"
+                app:cardCornerRadius="@dimen/x10"
+                app:cardElevation="@dimen/x3"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/x30"
-                    android:layout_gravity="center"
-                    android:background="@drawable/home_corner_bg"
-                    android:padding="@dimen/x12"
-                    android:paddingBottom="@dimen/x8"
-                    android:layout_marginBottom="@dimen/x5"
-                    >
+                    android:paddingBottom="@dimen/x40">
+                    <!--广播布局-->
+                    <LinearLayout
 
-                    <ImageView
-                        android:layout_marginLeft="@dimen/x30"
-                        android:layout_width="@dimen/x25"
-                        android:layout_height="@dimen/x25"
-                        android:layout_marginRight="@dimen/x15"
-                        android:src="@mipmap/guangbo_home" />
-
-                    <com.ahdz.oricalshelves.view.VerticalScrollTextView
-                        android:id="@+id/home_scroll_text"
+                        android:id="@+id/ll_scroll_text"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center|left"
-                        app:vst_singleLine="true"
-                        app:vst_textColor="@color/color999999"
-                        app:vst_textSize="@dimen/x20" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/x30"
+                        android:layout_gravity="center"
+                        android:background="@drawable/home_corner_bg"
+                        android:padding="@dimen/x12"
+                        android:paddingBottom="@dimen/x8"
+                        android:layout_marginBottom="@dimen/x5">
+
+                        <ImageView
+                            android:layout_marginLeft="@dimen/x30"
+                            android:layout_width="@dimen/x25"
+                            android:layout_height="@dimen/x25"
+                            android:layout_marginRight="@dimen/x15"
+                            android:src="@mipmap/guangbo_home" />
+
+                        <com.ahdz.oricalshelves.view.VerticalScrollTextView
+                            android:id="@+id/home_scroll_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center|left"
+                            app:vst_singleLine="true"
+                            app:vst_textColor="@color/color999999"
+                            app:vst_textSize="@dimen/x20" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="大约可借（元）"
+                        android:gravity="center"
+                        android:textColor="@color/textBlack"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/tv_much"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="88888"
+                        android:gravity="center"
+                        android:textColor="@color/textBlack"
+                        android:textSize="@dimen/x90" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="以最终审核信息为准\n贷款资金由合作金融机构提供"
+                        android:gravity="center"
+                        android:textColor="@color/color999999"
+                        android:textSize="@dimen/x20"
+
+                        />
+
+
+                    <com.coorchice.library.SuperTextView
+                        android:id="@+id/stv_l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="立即提现"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/x36"
+                        app:stv_corner="@dimen/x50"
+                        android:textStyle="bold"
+                        app:stv_solid="@color/orange_login"
+                        android:paddingTop="@dimen/x26"
+                        android:paddingBottom="@dimen/x26"
+                        android:layout_marginRight="@dimen/x125"
+                        android:layout_marginLeft="@dimen/x125"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="@dimen/x30" />
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="大约可借（元）"
-                    android:gravity="center"
-                    android:textColor="@color/textBlack"
-                    android:textSize="@dimen/x28"
-                    />
-                <TextView
-                    android:id="@+id/tv_much"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="88888"
-                    android:gravity="center"
-                    android:textColor="@color/textBlack"
-                    android:textSize="@dimen/x90"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="以最终审核信息为准\n贷款资金由合作金融机构提供"
-                    android:gravity="center"
-                    android:textColor="@color/color999999"
-                    android:textSize="@dimen/x20"
-                    android:layout_marginBottom="@dimen/x40"
-                    />
+            </androidx.cardview.widget.CardView>
 
+            <RelativeLayout
+                android:id="@+id/rl_vb"
+                android:layout_below="@id/title_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/x25"
+                android:paddingLeft="@dimen/x25"
+                android:paddingRight="@dimen/x25"
+                >
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x140"
+                    android:layout_centerHorizontal="true"
+                  />
+
+                <ImageView
+                    android:id="@+id/img_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x140"
+                    android:scaleType="fitXY"
+                    />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_below="@id/rl_vb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/x30">
+
+                <ImageView
+                    android:layout_width="@dimen/x10"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginRight="@dimen/x20"
+                    android:src="@color/orange_login" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="为您推荐以下贷款通道"
+                    android:textColor="@color/color333333"
+                    android:textSize="@dimen/x28"
+                    android:textStyle="bold"
+
+                    />
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <LinearLayout
-            android:layout_below="@id/title_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="@dimen/x30">
-
-            <ImageView
-                android:layout_width="@dimen/x10"
-                android:layout_height="@dimen/x40"
-                android:layout_marginRight="@dimen/x20"
-                android:src="@color/orange_login" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="为您推荐以下贷款通道"
-                android:textColor="@color/color333333"
-                android:textSize="@dimen/x28"
-                android:textStyle="bold"
-
-                />
-        </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
-
-</RelativeLayout>
+</layout>

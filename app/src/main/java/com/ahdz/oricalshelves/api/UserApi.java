@@ -2,6 +2,7 @@ package com.ahdz.oricalshelves.api;
 
 
 import com.ahdz.oricalshelves.bean.BaiHuiData;
+import com.ahdz.oricalshelves.bean.BannerModel;
 import com.ahdz.oricalshelves.bean.DeviceIdModel;
 import com.ahdz.oricalshelves.bean.DeviceIdRequest;
 import com.ahdz.oricalshelves.bean.LoginModel;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -110,6 +112,13 @@ public class UserApi extends BaseNetWork {
         // 产品跳转
         @POST("/foundation/api/sys/param/apply")
         Observable<BaseResponse<UrlData>> jumpProduction(@Body RequestBody requestBody);
+
+
+        /**
+         * 首页banner
+         */
+        @POST("/foundation/api/sys/param/homeBanner")
+        Observable<BaseResponse<List<BannerModel>>> getBannerList();
     }
 
   /*
@@ -176,7 +185,13 @@ public class UserApi extends BaseNetWork {
     }
 
 
-
+    /**
+     *    首页banner
+     * @param observer
+     */
+    public static void getBannerList(Observer<BaseResponse<List<BannerModel>>> observer){
+        setSubscribe(service.getBannerList(),observer);
+    }
 
 
     /**

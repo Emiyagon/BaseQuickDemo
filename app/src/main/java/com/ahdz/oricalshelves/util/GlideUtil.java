@@ -25,6 +25,8 @@ public class GlideUtil {
     private static int PLACE_IMG =  R.mipmap.ic_launcher;
     private static int FALLBACK_IMG =  R.mipmap.ic_launcher;
 
+    private static int BANNER_IMG = R.mipmap.hommer_banner;
+
 
 
     /**
@@ -84,6 +86,15 @@ public class GlideUtil {
                 .into(imageView);
     }
 
-
+    public static void putBannerImg(Object url, ImageView imageView) {
+        Glide.with(imageView)
+                .load(url)
+                .apply(new RequestOptions().centerInside()
+                        .placeholder(BANNER_IMG)//CENTER_INSIDE
+                        .error(BANNER_IMG)
+                        .fallback(BANNER_IMG))
+//                .thumbnail(0.1f)//先显示缩略图  缩略图为原图的1/10
+                .into(imageView);
+    }
 
 }

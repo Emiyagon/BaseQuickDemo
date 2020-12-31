@@ -34,6 +34,13 @@ public class MyWebviewActivity extends BaseActivity<ActivityMyWebviewBinding> {
     }
 
 
+    /**
+     *
+     * @param context
+     * @param url
+     * @param type  0是链接 1是加密之后的文本
+     * @param title
+     */
     public static void GoToService(Context context,String  url,int type,String title) {
         context.startActivity(new Intent(context,MyWebviewActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .putExtra("url",url).putExtra("type",type).putExtra("title",title));
