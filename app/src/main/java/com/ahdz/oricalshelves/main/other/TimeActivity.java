@@ -42,6 +42,16 @@ public class TimeActivity extends AppCompatActivity {
         chooseDay = nowDay;
         chooseMinute=calendar.get(Calendar.MINUTE);
         chooseHour =calendar.get(Calendar.HOUR_OF_DAY);
+
+
+        LoopView year = findViewById(R.id.year);
+        year.setItems(ListUtil.returnnumList(1970,2050));
+
+        year.setItemsVisibleCount(8);
+
+        year.setDividerColor(0xffFED452); //分割线颜色#FED452
+
+        year.setTextSize(19f);
         //  隔1000ms计时一次
         RxTimerUtil.interval(1000, number -> {
             if (!isStart) {
@@ -71,11 +81,6 @@ public class TimeActivity extends AppCompatActivity {
                         enter = itemView.findViewById(R.id.enter);
 
 
-
-
-
-
-
                     }
 
                     @Override
@@ -87,11 +92,27 @@ public class TimeActivity extends AppCompatActivity {
                         hour.setItems(ListUtil.returnnumList(0,24));
                         minute.setItems(ListUtil.returnnumList(0,60));
 
-                        year.setItemsVisibleCount(5);
-                        month.setItemsVisibleCount(5);
-                        day.setItemsVisibleCount(5);
-                        hour.setItemsVisibleCount(5);
-                        minute.setItemsVisibleCount(5);
+                        year.setItemsVisibleCount(8);
+                        month.setItemsVisibleCount(8);
+                        day.setItemsVisibleCount(8);
+                        hour.setItemsVisibleCount(8);
+                        minute.setItemsVisibleCount(8);
+
+                        year.setDividerColor(0xffFED452); //分割线颜色#FED452
+                        month.setDividerColor(0xffFED452); //分割线颜色#FED452
+                        day.setDividerColor(0xffFED452); //分割线颜色#FED452
+
+                        year.setTextSize(19f);
+
+                        //   app:awv_centerTextColor="0xffff0000"
+                        //app:awv_dividerTextColor="0xffeeeeee"
+                        year.setCenterTextColor(getResources().getColor(R.color.textBlack));
+                        month.setCenterTextColor(getResources().getColor(R.color.textBlack));
+                        day.setCenterTextColor(getResources().getColor(R.color.textBlack));
+
+                        year.setOuterTextColor(getResources().getColor(R.color.textGray));
+                        month.setOuterTextColor(getResources().getColor(R.color.textGray));
+                        day.setOuterTextColor(getResources().getColor(R.color.textGray));
 
 //                        year.setInitPosition(nowYear-1970);
 //                        month.setInitPosition(nowMonth);

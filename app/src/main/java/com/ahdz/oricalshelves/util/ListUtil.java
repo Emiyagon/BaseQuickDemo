@@ -38,14 +38,8 @@ public class ListUtil {
     public static List<Integer> numList(int start,int end) {
         List<Integer> list = new ArrayList<>();
 
-        if (start > end) {
-            for (int i = start; i <  end; i++) {
-                list.add(i);
-            }
-        }else {
-            for (int i = end; i <  start; i++) {
-                list.add(i);
-            }
+        for (int i = start; i <  end; i++) {
+            list.add(i);
         }
         return list;
     }
@@ -53,14 +47,8 @@ public class ListUtil {
 
     public static List<String> returnnumList(int start ,int end){
         List<String> list = new ArrayList<>();
-        if (start > end) {
-            for (int i = start; i <  end; i++) {
-                list.add(i+"");
-            }
-        }else {
-            for (int i = end; i <  start; i++) {
-                list.add(i+"");
-            }
+        for (int i = start; i <  end; i++) {
+            list.add(i+"");
         }
         return list;
     }

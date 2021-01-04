@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:orientation="vertical"
@@ -45,31 +45,67 @@
                 android:id="@+id/year"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:awv_centerTextColor="0xffff0000"
+                app:awv_dividerTextColor="0xffeeeeee"
+                app:awv_isLoop="false"
+                app:awv_textsize="18"
+                android:background="#1E90FF"
+                />
 
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line_color"
+                />
             <com.ahdz.oricalshelves.view.ioswheel.LoopView
                 android:id="@+id/month"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
-
+                android:layout_height="match_parent"
+                android:background="#00BFFF"
+                app:awv_isLoop="false"
+                app:awv_textsize="16"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line_color"
+                />
             <com.ahdz.oricalshelves.view.ioswheel.LoopView
                 android:id="@+id/day"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:awv_centerTextColor="0xffff0000"
+                app:awv_dividerTextColor="0xffeeeeee"
+                app:awv_isLoop="false"
+                app:awv_textsize="18"
+                android:background="#00FFFF"
+                />
 
             <com.ahdz.oricalshelves.view.ioswheel.LoopView
                 android:id="@+id/hour"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:awv_centerTextColor="0xffff0000"
+                app:awv_dividerTextColor="0xffeeeeee"
+                app:awv_isLoop="false"
+                app:awv_textsize="18"
+                android:visibility="gone"
+                />
 
             <com.ahdz.oricalshelves.view.ioswheel.LoopView
                 android:id="@+id/minute"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:awv_centerTextColor="0xffff0000"
+                app:awv_dividerTextColor="0xffeeeeee"
+                app:awv_isLoop="false"
+                app:awv_textsize="18"
+                android:visibility="gone"
+                />
         </LinearLayout>
 
     </LinearLayout>
