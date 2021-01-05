@@ -47,7 +47,7 @@ public class ListUtil {
 
     public static List<String> returnnumList(int start ,int end){
         List<String> list = new ArrayList<>();
-        for (int i = start; i <  end; i++) {
+        for (int i = start; i <=  end; i++) {
             list.add(i+"");
         }
         return list;

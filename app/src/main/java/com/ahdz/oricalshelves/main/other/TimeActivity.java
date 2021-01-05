@@ -44,14 +44,6 @@ public class TimeActivity extends AppCompatActivity {
         chooseHour =calendar.get(Calendar.HOUR_OF_DAY);
 
 
-        LoopView year = findViewById(R.id.year);
-        year.setItems(ListUtil.returnnumList(1970,2050));
-
-        year.setItemsVisibleCount(8);
-
-        year.setDividerColor(0xffFED452); //分割线颜色#FED452
-
-        year.setTextSize(19f);
         //  隔1000ms计时一次
         RxTimerUtil.interval(1000, number -> {
             if (!isStart) {
@@ -87,10 +79,10 @@ public class TimeActivity extends AppCompatActivity {
                     public void initEvent() {
 
                         year.setItems(ListUtil.returnnumList(1970,2050));
-                        month.setItems(ListUtil.returnnumList(1,13));
+                        month.setItems(ListUtil.returnnumList(1,12));
                         day.setItems(ListUtil.returnnumList(1,31));
-                        hour.setItems(ListUtil.returnnumList(0,24));
-                        minute.setItems(ListUtil.returnnumList(0,60));
+                        hour.setItems(ListUtil.returnnumList(0,23));
+                        minute.setItems(ListUtil.returnnumList(0,59));
 
                         year.setItemsVisibleCount(8);
                         month.setItemsVisibleCount(8);

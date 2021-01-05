@@ -19,6 +19,4 @@
 
         />
 
-    <include layout="@layout/dialog_time" />
-
 </RelativeLayout>

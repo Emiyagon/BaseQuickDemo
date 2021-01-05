@@ -151,26 +151,29 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             GlideUtil.putHttpImg(list.get(pos).getIcon(),holder.binding.iconIv);
             holder.binding.iconNameTv.setText(list.get(pos).getName()+"");
-
-            holder.binding.bottomTip2.setText(list.get(pos).getApplyers()+"");
             holder.binding.quotaTv.setText(list.get(pos).getLoanRange()+"");
             holder.binding.timeTv.setText(list.get(pos).getLoanTerm()+"");
-            holder.binding.bottomTip1.setText(list.get(pos).getRecommands()+"");
+            holder.binding.bottomTip2.setText(list.get(pos).getApplyers()+"");
 
-            holder.binding.stvTo.setOnClickListener(v -> {
-                ShoreMain.showShopDetail(context, list.get(pos).getId()+"", holder.binding.iconNameTv.getText().toString());
-            });
+//            holder.binding.bottomTip1.setText(list.get(pos).getRecommands()+"");
+            holder.binding.itemTag.setText(list.get(pos).getRecommands()+"");
+
+
 
             if ( list.get(pos).getKeywords().size()>0){
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0 ; i < list.get(pos).getKeywords().size() ; i++){
                     sb.append(list.get(pos).getKeywords().get(i)+" ");
                 }
-                holder.binding.itemTag.setText(sb.toString()+"");
+//                holder.binding.itemTag.setText(sb.toString()+"");
+                holder.binding.bottomTip1.setText(sb.toString()+"");
             }
-//        }
 
-        // Projects
+
+
+        holder.binding.stvTo.setOnClickListener(v -> {
+            ShoreMain.showShopDetail(context, list.get(pos).getId()+"", holder.binding.iconNameTv.getText().toString());
+        });
     }
 
 
