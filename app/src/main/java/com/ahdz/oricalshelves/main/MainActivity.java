@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import com.ahdz.oricalshelves.BuildConfig;
 import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.api.BaseResponse;
 import com.ahdz.oricalshelves.api.UserApi;
