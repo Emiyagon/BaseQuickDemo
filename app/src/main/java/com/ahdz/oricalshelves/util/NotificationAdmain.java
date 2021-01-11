@@ -15,7 +15,7 @@ import android.widget.RemoteViews;
 
 import androidx.core.app.NotificationCompat;
 
-import com.ahdz.oricalshelves.service.DeleteService;
+import com.ds.oricalshelves.service.DeleteService;
 
 
 public class NotificationAdmain {

@@ -19,8 +19,6 @@ import java.text.DecimalFormat;
 public class FileCacheUtils {
     private static DecimalFormat df;
 
-
-
     /**
      * 获取缓存值
      */

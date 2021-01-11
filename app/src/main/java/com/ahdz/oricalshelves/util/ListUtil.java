@@ -1,5 +1,7 @@
 package com.ahdz.oricalshelves.util;
 
+import com.ds.oricalshelves.MyApplication;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,10 +49,46 @@ public class ListUtil {
 
     public static List<String> returnnumList(int start ,int end){
         List<String> list = new ArrayList<>();
-        for (int i = start; i <=  end; i++) {
+        for (int i = start; i <  end; i++) {
             list.add(i+"");
         }
         return list;
     }
+
+
+    public static List<String> arraysToList(String[] strings) {
+        if (strings==null || strings.length==0){
+            return new ArrayList<>();
+        }
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+            list.add(strings[i]);
+        }
+        return list;
+    }
+
+    public static List<String> arraysToList(int arrayId) {
+        String[] strings = MyApplication.getInstance().getResources().getStringArray(arrayId);
+        if (strings==null || strings.length==0){
+            return new ArrayList<>();
+        }
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+            list.add(strings[i]);
+        }
+        return list;
+    }
+
+
+    public static <T> List<T> getTList(int num) {
+        List<T> list = new ArrayList<T>();
+        T data = (T) new Object();
+        for (int i = 0; i < num; i++) {
+            list.add(data);
+        }
+        return list;
+    }
+
+
 
 }

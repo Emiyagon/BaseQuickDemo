@@ -1,16 +1,13 @@
 package com.ahdz.oricalshelves.util;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.widget.ImageView;
 
-import com.ahdz.oricalshelves.R;
+import com.ds.oricalshelves.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-
-import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
 /**
@@ -25,7 +22,6 @@ public class GlideUtil {
     private static int PLACE_IMG =  R.mipmap.ic_launcher;
     private static int FALLBACK_IMG =  R.mipmap.ic_launcher;
 
-    private static int BANNER_IMG = R.mipmap.hommer_banner;
 
 
 
@@ -86,13 +82,15 @@ public class GlideUtil {
                 .into(imageView);
     }
 
+    private int BANNER_IMG = 0;
     public static void putBannerImg(Object url, ImageView imageView) {
         Glide.with(imageView)
                 .load(url)
                 .apply(new RequestOptions().centerInside()
-                        .placeholder(BANNER_IMG)//CENTER_INSIDE
-                        .error(BANNER_IMG)
-                        .fallback(BANNER_IMG))
+//                        .placeholder(BANNER_IMG)
+//                        .error(BANNER_IMG)
+//                        .fallback(BANNER_IMG)
+                )
 //                .thumbnail(0.1f)//先显示缩略图  缩略图为原图的1/10
                 .into(imageView);
     }

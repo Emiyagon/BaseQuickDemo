@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.databinding.ViewDataBinding;
-
 import com.ahdz.oricalshelves.MyApplication;
 import com.ahdz.oricalshelves.view.ioswait.SVProgressHUD;
 

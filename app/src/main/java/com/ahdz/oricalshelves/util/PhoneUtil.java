@@ -1,24 +1,21 @@
 package com.ahdz.oricalshelves.util;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
+import com.ds.oricalshelves.MyApplication;
 
-import com.ahdz.oricalshelves.MyApplication;
-
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -200,4 +197,98 @@ public class PhoneUtil {
     }
 
 
-}
+    /**
+     * 获取设备拨号运营商
+     *
+     * @return ["中国电信CTCC":3]["中国联通CUCC:2]["中国移动CMCC":1]["other":0]["无sim卡":-1]
+     */
+    public static int getSubscriptionOperatorType(Context context) {
+        int opeType = -1;
+        // No sim
+        if (!hasSim(context)) {
+            return opeType;
+        }
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String operator = tm.getNetworkOperator();
+
+        if ("46001".equals(operator) || "46006".equals(operator) || "46009".equals(operator)) {
+            opeType = 2;// 中国联通
+
+        } else if ("46000".equals(operator) || "46002".equals(operator) || "46004".equals(operator) || "46007".equals(operator)) {
+            opeType = 1;// 中国移动
+
+        } else if ("46003".equals(operator) || "46005".equals(operator) || "46011".equals(operator)) {
+            opeType = 3;  // 中国电信
+        } else {
+            opeType = 0;
+        }
+        return opeType;
+    }
+
+    /**
+     * 获取设备蜂窝网络运营商
+     *
+     * @return ["中国电信CTCC":3]["中国联通CUCC:2]["中国移动CMCC":1]["other":0]["无sim卡":-1]["数据流量未打开":-2]
+     */
+    public static int getCellularOperatorType(Context context) {
+        int opeType = -1;
+        // No sim
+        if (!hasSim(context)) {
+            return opeType;
+        }
+        // Mobile data disabled
+        if (!isMobileDataEnabled(context)) {
+            opeType = -2;
+            return opeType;
+        }
+        // Check cellular operator
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String operator = tm.getSimOperator();
+        // 中国联通
+        if ("46001".equals(operator) || "46006".equals(operator) || "46009".equals(operator)) {
+            opeType = 2;
+            // 中国移动
+        } else if ("46000".equals(operator) || "46002".equals(operator) || "46004".equals(operator) || "46007".equals(operator)) {
+            opeType = 1;
+            // 中国电信
+        } else if ("46003".equals(operator) || "46005".equals(operator) || "46011".equals(operator)) {
+            opeType = 3;
+        } else {
+            opeType = 0;
+        }
+        return opeType;
+    }
+
+
+
+    /**
+     * 判断数据流量开关是否打开
+     *
+     * @param context
+     * @return
+     */
+    public static boolean isMobileDataEnabled(Context context) {
+        try {
+            Method method = ConnectivityManager.class.getDeclaredMethod("getMobileDataEnabled");
+            method.setAccessible(true);
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            return (Boolean) method.invoke(connectivityManager);
+        } catch (Throwable t) {
+            Log.d("isMobileDataEnabled", "Check mobile data encountered exception");
+            return false;
+        }
+    }
+
+    /**
+     * 检查手机是否有sim卡
+     */
+    public static boolean hasSim(Context context) {
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String operator = tm.getSimOperator();
+        if (TextUtils.isEmpty(operator)) {
+            return false;
+        }
+        return true;
+    }
+
+    }

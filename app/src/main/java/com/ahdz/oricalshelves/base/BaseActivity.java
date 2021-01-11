@@ -1,7 +1,6 @@
 package com.ahdz.oricalshelves.base;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
@@ -13,7 +12,6 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,15 +22,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
-import com.ahdz.oricalshelves.BuildConfig;
 import com.ahdz.oricalshelves.MyApplication;
 import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.service.NetWorkStateReceiver;
 import com.ahdz.oricalshelves.util.AppUtils;
 import com.ahdz.oricalshelves.util.GlideCacheUtil;
-import com.ahdz.oricalshelves.util.LogUtil;
 import com.ahdz.oricalshelves.util.SoftInputUtils;
-import com.ahdz.oricalshelves.util.TUtil;
 import com.ahdz.oricalshelves.util.screen.ScreenUtil;
 import com.ahdz.oricalshelves.util.screen.StatusUtils;
 import com.ahdz.oricalshelves.view.MProgressDialog;

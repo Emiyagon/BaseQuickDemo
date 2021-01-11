@@ -30,7 +30,6 @@ import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.databinding.FragmentBaseBinding;
 import com.ahdz.oricalshelves.util.GlideCacheUtil;
 import com.ahdz.oricalshelves.util.SpannableUtil;
-import com.ahdz.oricalshelves.util.screen.ScreenUtil;
 import com.ahdz.oricalshelves.view.MProgressDialog;
 
 import rx.subscriptions.CompositeSubscription;
@@ -46,7 +45,7 @@ import rx.subscriptions.CompositeSubscription;
  * @see #onFragmentVisibleChange(boolean)
  * @see #onFragmentFirstVisible()
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<SV extends ViewDataBinding> extends Fragment {
 
   private static final String TAG = BaseFragment.class.getSimpleName();
 
@@ -186,6 +185,8 @@ public abstract class BaseFragment extends Fragment {
     }
   }
   protected FragmentBaseBinding mBaseBinding;
+  //布局view
+  protected SV mBindingView;
   private CompositeSubscription mCompositeSubscription;//网络请求观察者
   // 内容布局
   protected FrameLayout mContainer;
@@ -193,9 +194,17 @@ public abstract class BaseFragment extends Fragment {
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    return super.onCreateView(inflater, container, savedInstanceState);
+    mBaseBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, container, false);
+    mBindingView = DataBindingUtil.inflate(getActivity().getLayoutInflater(), setContent(), null, false);
+    mBindingView.setLifecycleOwner(this);
+    mContainer = mBaseBinding.container;
+    mContainer.addView(mBindingView.getRoot());
+    return mBaseBinding.getRoot();
   }
-
+  /**
+   * 布局
+   */
+  public abstract int setContent();
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
