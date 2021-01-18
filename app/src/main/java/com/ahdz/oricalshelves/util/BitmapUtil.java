@@ -19,7 +19,8 @@ import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 
-import com.ds.oricalshelves.MyApplication;
+
+import com.ahdz.oricalshelves.MyApplication;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;

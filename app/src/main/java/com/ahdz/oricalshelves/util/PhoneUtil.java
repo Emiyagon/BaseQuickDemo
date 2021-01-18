@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.ds.oricalshelves.MyApplication;
+import com.ahdz.oricalshelves.MyApplication;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

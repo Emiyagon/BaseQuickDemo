@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Base64;
 
-import com.ds.oricalshelves.MyApplication;
+import com.ahdz.oricalshelves.MyApplication;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

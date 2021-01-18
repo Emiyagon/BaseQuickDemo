@@ -18,7 +18,7 @@ import android.view.WindowManager;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.ds.oricalshelves.MyApplication;
+import com.ahdz.oricalshelves.MyApplication;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

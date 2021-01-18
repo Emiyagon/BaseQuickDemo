@@ -110,11 +110,12 @@ public class HomepageFragment extends Fragment {
 //            adapter.setBaiHui(baiHuiData);
             mBindingView.title.tvMuch.setText(present.displayWithComma(baiHuiData.getQuota()+"")+".00");
             mBindingView.title.stvL.setOnClickListener(v -> {
-                if (TextUtils.isEmpty(baiHuiData.getUrl())){
+              /*  if (TextUtils.isEmpty(baiHuiData.getUrl())){
 //                    startActivity(new Intent(getContext(), TimeActivity.class));
                     return;
-                }
-                MyWebviewActivity.GoToService(getContext(),baiHuiData.getUrl(),0,"");
+                }*/
+//                MyWebviewActivity.GoToService(getContext(),baiHuiData.getUrl(),0,"");
+                present.toApply();
             });
         });
         present.gbList.observe(getViewLifecycleOwner(), strings -> {

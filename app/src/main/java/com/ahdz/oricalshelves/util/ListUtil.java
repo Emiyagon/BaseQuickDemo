@@ -1,6 +1,6 @@
 package com.ahdz.oricalshelves.util;
 
-import com.ds.oricalshelves.MyApplication;
+import com.ahdz.oricalshelves.MyApplication;
 
 import java.util.ArrayList;
 import java.util.List;

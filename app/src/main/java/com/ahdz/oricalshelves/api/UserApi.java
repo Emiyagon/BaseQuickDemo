@@ -70,6 +70,12 @@ public class UserApi extends BaseNetWork {
         Observable<BaseResponse<BaiHuiData>> getBaiHui();
 
         /**
+         * 首页跳转
+         */
+        @POST("/user/api/rights/apply")
+//        @POST("/user/api/rights/applyNew")
+        Observable<BaseResponse<UrlData>> toApply(@Body RequestBody requestBody);
+        /**
          *   广播
          * @param requestBody
          * @return
@@ -125,6 +131,10 @@ public class UserApi extends BaseNetWork {
   public static void insertMyAddressObtain(RequestBody body,Observer<BaseResponse<String>>observer){
         setSubscribe(service.insertMyAddressObtain(body),observer);
     }*/
+
+    public static void toApply(RequestBody request, Observer<BaseResponse<UrlData>> observer) {
+        setSubscribe(service.toApply(request), observer);
+    }
 
     // 产品跳转
     public static void jumpProduction(String id, Observer<BaseResponse<UrlData>> observer) {

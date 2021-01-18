@@ -154,6 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/x140"
                     android:scaleType="fitXY"
+                    android:src="@mipmap/hommer_banner"
                     />
             </RelativeLayout>
 

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import com.ds.oricalshelves.R;
+import com.ahdz.oricalshelves.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

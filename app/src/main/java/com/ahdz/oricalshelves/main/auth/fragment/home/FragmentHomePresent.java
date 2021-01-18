@@ -1,10 +1,12 @@
 package com.ahdz.oricalshelves.main.auth.fragment.home;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import androidx.lifecycle.MutableLiveData;
 
 import com.ahdz.oricalshelves.api.BaseResponse;
+import com.ahdz.oricalshelves.api.RetrofitUtils;
 import com.ahdz.oricalshelves.api.UserApi;
 import com.ahdz.oricalshelves.base.BasePresenter;
 import com.ahdz.oricalshelves.bean.BaiHuiData;
@@ -159,6 +161,33 @@ public class FragmentHomePresent extends BasePresenter {
 
     }
 
+    public void toApply(){
+        UserApi.toApply(RetrofitUtils.getRequestBody(RetrofitUtils.getTimestamp()), new Observer<BaseResponse<UrlData>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull BaseResponse<UrlData> date) {
+                if (!TextUtils.isEmpty(date.getData().getUrl())){
+                    MyWebviewActivity.GoToService(context,date.getData().getUrl(),0,"");
+
+                }
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
     //  上方数字
     public void TopHttp() {
         UserApi.getBaiHui(new Observer<BaseResponse<BaiHuiData>>() {
