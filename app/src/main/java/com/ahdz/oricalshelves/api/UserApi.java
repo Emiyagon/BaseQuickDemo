@@ -69,6 +69,12 @@ public class UserApi extends BaseNetWork {
         @POST("/foundation/api/sys/param/baihui")
         Observable<BaseResponse<BaiHuiData>> getBaiHui();
 
+
+        /**
+         * bannerCash
+         */
+        @POST("/foundation/api/sys/param/bannerCache")
+        Observable<BaseResponse<String>> getBannerCache(@Body RequestBody body);
         /**
          * 首页跳转
          */
@@ -132,6 +138,9 @@ public class UserApi extends BaseNetWork {
         setSubscribe(service.insertMyAddressObtain(body),observer);
     }*/
 
+    public static void getBannerCache(Map<String,Object> map,Observer<BaseResponse<String>> observer){
+        setSubscribe(service.getBannerCache(RetrofitUtils.getRequestBody(gson.toJson(map))),observer);
+    }
     public static void toApply(RequestBody request, Observer<BaseResponse<UrlData>> observer) {
         setSubscribe(service.toApply(request), observer);
     }

@@ -161,6 +161,37 @@ public class FragmentHomePresent extends BasePresenter {
 
     }
 
+    public void toApply(int id) {
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("id", id);
+        UserApi.getBannerCache(map, new Observer<BaseResponse<String>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull BaseResponse<String> t) {
+                if (t.getCode() == 200) {
+                    OnClickTo(id+"");
+                }
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+    }
+
     public void toApply(){
         UserApi.toApply(RetrofitUtils.getRequestBody(RetrofitUtils.getTimestamp()), new Observer<BaseResponse<UrlData>>() {
             @Override

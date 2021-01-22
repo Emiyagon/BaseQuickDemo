@@ -11,9 +11,11 @@ import android.text.TextUtils;
 import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.api.BaseResponse;
 import com.ahdz.oricalshelves.api.UserApi;
+import com.ahdz.oricalshelves.base.BaseActivity;
 import com.ahdz.oricalshelves.bean.DeviceIdModel;
 import com.ahdz.oricalshelves.bean.DeviceIdRequest;
 import com.ahdz.oricalshelves.bean.RegiterDeviceRequest;
+import com.ahdz.oricalshelves.databinding.ActivityMainBinding;
 import com.ahdz.oricalshelves.main.auth.activity.HomePageActivity;
 import com.ahdz.oricalshelves.main.login.LoginActivity;
 import com.ahdz.oricalshelves.util.AppUtils;
@@ -29,14 +31,18 @@ import io.reactivex.disposables.Disposable;
 /**
  *   闪屏页面
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     private Context context;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int setLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initData() {
+
         context = this;
         RxTimerUtil.timer(2500, number -> {
             Intent intent = new Intent();
@@ -137,4 +143,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

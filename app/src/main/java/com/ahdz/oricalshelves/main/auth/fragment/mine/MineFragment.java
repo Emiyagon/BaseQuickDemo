@@ -50,10 +50,10 @@ public class MineFragment extends Fragment {
         present.OnHttp();
         present.MineHttp();
 
-        present.userInfo.observe(this, userInfoData -> {
+        present.userInfo.observe(getViewLifecycleOwner(), userInfoData -> {
             adapter.setTelePhone(getPt(userInfoData.getPhone()));
         });
-        present.projectsList.observe(this, projects -> {
+        present.projectsList.observe(getViewLifecycleOwner(), projects -> {
             adapter.setList(projects);
         });
     }

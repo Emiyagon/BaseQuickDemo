@@ -118,6 +118,11 @@ public class HomepageFragment extends Fragment {
                 present.toApply();
             });
         });
+
+        mBindingView.title.imgLoader.setOnClickListener(v -> {
+            present.OnClickTo("-1");
+        });
+
         present.gbList.observe(getViewLifecycleOwner(), strings -> {
             adapter.setStrings(strings);
             if ( strings.size() > 0) {

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -22,7 +23,11 @@ import com.ahdz.oricalshelves.BuildConfig;
 import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.base.BaseActivity;
 import com.ahdz.oricalshelves.databinding.ActivityMyWebviewBinding;
+import com.ahdz.oricalshelves.download.Downserver;
 import com.ahdz.oricalshelves.util.BaseUtil;
+import com.ahdz.oricalshelves.util.DownloadUtil;
+
+import pub.devrel.easypermissions.EasyPermissions;
 
 public class MyWebviewActivity extends BaseActivity<ActivityMyWebviewBinding> {
 
@@ -113,6 +118,13 @@ public class MyWebviewActivity extends BaseActivity<ActivityMyWebviewBinding> {
             }
         });
 
+        webView.setDownloadListener((url, userAgent, contentDisposition, mimetype, contentLength) -> {
+            Intent intent =new  Intent(Intent.ACTION_VIEW);
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        });
+
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView webView, String s) {
@@ -125,9 +137,33 @@ public class MyWebviewActivity extends BaseActivity<ActivityMyWebviewBinding> {
                 // 拦截 url 跳转,在里边添加点击链接跳转或者操作
 //                view.loadUrl(url);
                 Log.e("GAME-SOULoading", url);
+              /*  if ((url.startsWith("http://") || url.startsWith("https://"))
+                        && !url.contains("alipay")
+                ) { //加载的url是http/https协议地址
+                    view.loadUrl(url);
+                    return false; //返回false表示此url默认由系统处理,url未加载完成，会继续往下走
+                } else { //加载的url是自定义协议地址
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                    } catch (  Exception e) {
+                        Log.e("webview", e.toString());
+                        e.printStackTrace();
+                    }
+                    return true;
+                }*/
+                if (url.contains(".apk")){
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
-//                return true;
+                    Uri uri = Uri.parse(url);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+
+//                    new Downserver().showDownloadServer(MyWebviewActivity.this,url);
+                    return true;
+                }
+
                 return false;
+
             }
 
             @Override

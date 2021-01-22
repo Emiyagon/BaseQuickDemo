@@ -42,7 +42,7 @@ task clean(type: Delete) {
 ext {
     // app 相关版本控制
     versions = [
-            sdkMinVersion     : 19,
+            sdkMinVersion     : 21,
             targetSdkVersion  : 30,
 
             compileSdkVersion : 30,

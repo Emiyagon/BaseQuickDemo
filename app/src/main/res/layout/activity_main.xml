@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         tools:context=".main.MainActivity"
         android:gravity="center"
-        android:fitsSystemWindows="false"
+        android:fitsSystemWindows="true"
         >
 
         <ImageView

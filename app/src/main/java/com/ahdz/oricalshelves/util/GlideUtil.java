@@ -82,14 +82,14 @@ public class GlideUtil {
                 .into(imageView);
     }
 
-    private int BANNER_IMG = 0;
+    private static final int BANNER_IMG = R.mipmap.hommer_banner;
     public static void putBannerImg(Object url, ImageView imageView) {
         Glide.with(imageView)
                 .load(url)
                 .apply(new RequestOptions().centerInside()
-//                        .placeholder(BANNER_IMG)
-//                        .error(BANNER_IMG)
-//                        .fallback(BANNER_IMG)
+                        .placeholder(BANNER_IMG)
+                        .error(BANNER_IMG)
+                        .fallback(BANNER_IMG)
                 )
 //                .thumbnail(0.1f)//先显示缩略图  缩略图为原图的1/10
                 .into(imageView);

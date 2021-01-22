@@ -58,6 +58,9 @@ public class MallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             holder.binding.timeTv.setText(list.get(pos).getLoanTerm()+"");
             holder.binding.bottomTip1.setText(list.get(pos).getRecommands()+"");
 
+            holder.binding.cardApply.setOnClickListener(v -> {
+                ShoreMain.showShopDetail(context, list.get(pos).getId()+"",holder.binding.iconNameTv.getText().toString());
+            });
             holder.binding.stvTo.setOnClickListener(v -> {
                 ShoreMain.showShopDetail(context, list.get(pos).getId()+"",holder.binding.iconNameTv.getText().toString());
             });

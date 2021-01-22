@@ -171,6 +171,10 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
 
+        holder.binding.cardApply.setOnClickListener(v -> {
+            ShoreMain.showShopDetail(context, list.get(pos).getId()+"", holder.binding.iconNameTv.getText().toString());
+        });
+
         holder.binding.stvTo.setOnClickListener(v -> {
             ShoreMain.showShopDetail(context, list.get(pos).getId()+"", holder.binding.iconNameTv.getText().toString());
         });

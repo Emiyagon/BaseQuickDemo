@@ -3,10 +3,11 @@ package com.ahdz.oricalshelves.util.myspans;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-import com.ds.oricalshelves.MyApplication;
-import com.ds.oricalshelves.util.myspans.unit.SimplifySpanBuild;
-import com.ds.oricalshelves.util.myspans.unit.SpecialGravity;
-import com.ds.oricalshelves.util.myspans.unit.SpecialLabelUnit;
+import com.ahdz.oricalshelves.MyApplication;
+import com.ahdz.oricalshelves.util.myspans.unit.SimplifySpanBuild;
+import com.ahdz.oricalshelves.util.myspans.unit.SpecialGravity;
+import com.ahdz.oricalshelves.util.myspans.unit.SpecialLabelUnit;
+
 
 public class SpanUtil {
 

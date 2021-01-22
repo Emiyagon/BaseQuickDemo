@@ -1,2 +1,3 @@
+include ':imageselector'
 include ':app'
 rootProject.name='OricalShelves'
