@@ -95,6 +95,14 @@ public class UserApi extends BaseNetWork {
         @POST("/user/api/user/mine")
         Observable<BaseResponse<UserInfoData>> getUserInfo(@Body RequestBody requestBody);
 
+
+        /**
+         *
+         *  我的 显示贷款记录
+         */
+        @POST("/user/api/user/findUserLoanState")
+        Observable<BaseResponse<String>>  getShowDkjl (@Body RequestBody requestBody);
+
         //登出
         @POST("/user/api/user/logout")
         Observable<BaseResponse<String>> toLogout(@Body RequestBody requestBody);
@@ -223,6 +231,10 @@ public class UserApi extends BaseNetWork {
     }
 
 
+
+    public static void getShowDkjl(Observer<BaseResponse<String>> observer) {
+        setSubscribe(service.getShowDkjl(RetrofitUtils.getRequestBody(RetrofitUtils.getTimestamp())), observer);
+    }
 
 
     /**

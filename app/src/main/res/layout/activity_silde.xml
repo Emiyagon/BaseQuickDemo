@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        tools:context=".main.auth.activity.SildeActivity">
+
+        <include layout="@layout/title_view" android:id="@+id/title"/>
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.core.widget.NestedScrollView
+                android:background="@color/color_f6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="@dimen/x25"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_ood"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x340"
+                        android:background="@color/white"
+                        android:src="@mipmap/now_applyed"
+                        android:scaleType="fitXY"
+                        />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+    </LinearLayout>
+</layout>

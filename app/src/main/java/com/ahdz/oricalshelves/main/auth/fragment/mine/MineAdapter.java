@@ -16,6 +16,7 @@ import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.bean.Projects;
 import com.ahdz.oricalshelves.bean.ShoreMain;
 import com.ahdz.oricalshelves.databinding.ItemCardBinding;
+import com.ahdz.oricalshelves.main.auth.activity.SildeActivity;
 import com.ahdz.oricalshelves.main.auth.activity.setting.SettingActivity;
 import com.ahdz.oricalshelves.util.GlideUtil;
 
@@ -27,6 +28,13 @@ public class MineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Projects> list = new ArrayList<>();
 
     private String telePhone = "";
+
+    private boolean isDk = false;
+
+    public void setDk(boolean dk) {
+        isDk = dk;
+        notifyDataSetChanged();
+    }
 
     public void setTelePhone(String telePhone) {
         this.telePhone = telePhone;
@@ -57,6 +65,11 @@ public class MineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (viewHolder instanceof SettingVH) {
             SettingVH setting = (SettingVH) viewHolder;
             setting.tele.setText(telePhone);
+            setting.ll_dk.setVisibility(isDk?View.VISIBLE:View.GONE);
+            setting.ll_dk.setOnClickListener(v -> {
+                context.startActivity(new Intent(context, SildeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+            });
+
             setting.setting.setOnClickListener(v -> {
                 context.startActivity(new Intent(context, SettingActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
             });
@@ -119,12 +132,13 @@ public class MineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class SettingVH extends RecyclerView.ViewHolder {
         ImageView icon;
         TextView tele;
-        View setting;
+        View setting,ll_dk;
         public SettingVH(@NonNull View itemView) {
             super(itemView);
             icon = itemView.findViewById(R.id.icon);
             tele = itemView.findViewById(R.id.tele);
             setting = itemView.findViewById(R.id.img_setting);
+            ll_dk = itemView.findViewById(R.id.ll_dk);
         }
     }
 

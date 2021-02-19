@@ -56,6 +56,11 @@ public class MineFragment extends Fragment {
         present.projectsList.observe(getViewLifecycleOwner(), projects -> {
             adapter.setList(projects);
         });
+
+        present.showPresentInfo();
+        present.showDk.observe(getViewLifecycleOwner(), aBoolean -> {
+            adapter.setDk(aBoolean);
+        });
     }
     private String getPt(String str){
         String stars = "****";
@@ -69,5 +74,6 @@ public class MineFragment extends Fragment {
         super.onResume();
         present.OnHttp();
         present.MineHttp();
+        present.showPresentInfo();
     }
 }

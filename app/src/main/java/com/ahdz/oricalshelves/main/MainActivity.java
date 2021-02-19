@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             }else {
                 intent.setClass(MainActivity.this, HomePageActivity.class);
             }
+//            intent.setClass(MainActivity.this, HomePageActivity.class);
             startActivity(intent);
             finish();
         });

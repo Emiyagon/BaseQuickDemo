@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
@@ -53,5 +54,39 @@
             android:layout_marginTop="@dimen/x42"
             />
     </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_dk"
+        android:layout_margin="@dimen/x25"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_remain"
+        android:padding="@dimen/x25"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="合作贷款记录"
+
+            android:textColor="@color/textBlack"
+            android:textSize="@dimen/x29"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+
+            android:textColor="@color/textGray"
+            android:textSize="@dimen/x25"
+            />
+
+
+    </LinearLayout>
 
 </LinearLayout>

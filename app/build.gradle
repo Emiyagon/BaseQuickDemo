@@ -44,10 +44,16 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
     }
-    repositories {
+        repositories {
         flatDir {
             dirs 'libs'
         }
@@ -124,7 +130,7 @@ dependencies {
     implementation 'pub.devrel:easypermissions:1.0.1'
 
     //  微信支付
-    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+//    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 
     // 沉浸式
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'

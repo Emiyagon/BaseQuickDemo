@@ -205,8 +205,8 @@ public class GridImageAdapter extends
                 viewHolder.mImg.setImageResource(R.drawable.picture_audio_placeholder);
             } else {
                 Glide.with(viewHolder.itemView.getContext())
-                        .load(PictureMimeType.isContent(path) && !media.isCut() && !media.isCompressed() ? Uri.parse(path)
-                                : path)
+//                        .load(PictureMimeType.isContent(path) && !media.isCut() && !media.isCompressed() ? Uri.parse(path) : path)
+                        .load( new File(path) )
 //                        .centerCrop()
 //                        .placeholder(R.color.app_color_f6)
 //                        .diskCacheStrategy(DiskCacheStrategy.ALL)

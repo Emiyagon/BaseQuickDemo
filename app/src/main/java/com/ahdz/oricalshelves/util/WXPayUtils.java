@@ -5,9 +5,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
-import com.tencent.mm.opensdk.modelpay.PayReq;
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import java.security.MessageDigest;
 import java.util.LinkedHashMap;
@@ -15,19 +12,19 @@ import java.util.Map;
 import java.util.Random;
 
 public class WXPayUtils {
+  /*
     private IWXAPI iwxapi; //微信支付api
-
     private WXPayBuilder builder;
 
     private WXPayUtils(WXPayBuilder builder) {
         this.builder = builder;
     }
 
-    /**
+    *//**
      * 调起微信支付的方法,不需要在客户端签名
      *
      *
-     **/
+     **//*
     public void toWXPayNotSign(Context context, String appid) {
         iwxapi = WXAPIFactory.createWXAPI(context, null); //初始化微信api
         iwxapi.registerApp(appid); //注册appid  appid可以在开发平台获取
@@ -50,9 +47,9 @@ public class WXPayUtils {
         payThread.start();
     }
 
-    /**
+    *//**
      * 调起微信支付的方法,需要在客户端签名
-     **/
+     **//*
     public void toWXPayAndSign(Context context, String appid, final String key) {
         iwxapi = WXAPIFactory.createWXAPI(context, null); //初始化微信api
         iwxapi.registerApp(appid); //注册appid  appid可以在开发平台获取
@@ -90,10 +87,10 @@ public class WXPayUtils {
         payThread.start();
     }
 
-    /**
+    *//**
      * 调起微信APP支付，签名
      * 生成签名
-     */
+     *//*
     private String genPackageSign(LinkedHashMap<String, String> params, String key) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : params.entrySet()) {
@@ -109,12 +106,12 @@ public class WXPayUtils {
         return packageSign;
     }
 
-    /**
+    *//**
      * md5加密
      *
      * @param buffer
      * @return
-     */
+     *//*
     private String getMessageDigest(byte[] buffer) {
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         try {
@@ -135,22 +132,22 @@ public class WXPayUtils {
         }
     }
 
-    /**
+    *//**
      * 获取随机数
      *
      * @return
-     */
+     *//*
     private String genNonceStr() {
         Random random = new Random();
         return getMessageDigest(String.valueOf(random.nextInt(10000)).getBytes());
     }
 
 
-    /**
+    *//**
      * 获取时间戳
      *
      * @return
-     */
+     *//*
     private long genTimeStamp() {
         return System.currentTimeMillis() / 1000;
     }
@@ -230,5 +227,5 @@ public class WXPayUtils {
             this.sign = sign;
             return this;
         }
-    }
+    }*/
 }

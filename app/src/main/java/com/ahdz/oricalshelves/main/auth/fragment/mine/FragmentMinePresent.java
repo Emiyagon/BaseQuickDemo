@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import io.reactivex.Observer;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
 public class FragmentMinePresent extends BasePresenter {
@@ -23,12 +24,45 @@ public class FragmentMinePresent extends BasePresenter {
     private FragmentMineBinding binding;
     public MutableLiveData<ArrayList<Projects>> projectsList = new MutableLiveData<>();
     public MutableLiveData<UserInfoData> userInfo = new MutableLiveData<>();
+    public MutableLiveData<Boolean> showDk = new MutableLiveData<>();
+
+
 
     public FragmentMinePresent(Context context, FragmentMineBinding binding) {
         this.context = context;
         this.binding = binding;
     }
 
+    //  是否显示贷款记录
+    public void showPresentInfo(){
+        UserApi.getShowDkjl(new Observer<BaseResponse<String>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull BaseResponse<String> response) {
+
+                if(response.getCode()==200){
+                    showDk.setValue(response.getData().equals("1"));
+                }else {
+                    showDk.setValue(false);
+                }
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 
     // 个人信息
     public void MineHttp() {
