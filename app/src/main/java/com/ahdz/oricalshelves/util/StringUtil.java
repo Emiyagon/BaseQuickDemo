@@ -36,9 +36,10 @@ public class StringUtil {
     }
     public static void delatedHtmlMuch(TextView textView, String num, int color) {
 
-//        String   allLong ="<strong><font color=\"#5c6d94\"> "+  name +"</font></strong>"+" <font color=\"#999999\"><small>回复</small></font> "+"<strong><font color=\"#5c6d94\">"+ replyName
-//                + "</font></strong> : "+ replyM + "";
-        String span = "<strong><font color=\"#3F96F8\"><small>"+  "¥" +"</small></font></strong>" + "\t<strong><font color=\"#3F96F8\"><normal>"+  num +"</normal></font></strong>";
+        String test = "<#$color@!>浏览</#$color@!>了你的文章：标题，可能对相关资讯文章感兴趣，建议密切关注";
+        test.replace("<#$color@!>","<font color=\"#3F96F8\">").replace("</#$color@!>","</font>");
+        String span = "<strong><font color=\"#3F96F8\"><small>"+
+                "¥" +"</small></font></strong>" + "\t<strong><font color=\"#3F96F8\"><normal>"+  num +"</normal></font></strong>";
         textView.setText(Html.fromHtml(span));
 
     }

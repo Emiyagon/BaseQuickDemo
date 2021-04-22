@@ -234,7 +234,6 @@ public class ComplaintsActivity extends BaseActivity<ActivityComplaintsBinding> 
 
         }
     };
-
     /**
      * 返回结果回调
      */
@@ -274,8 +273,6 @@ public class ComplaintsActivity extends BaseActivity<ActivityComplaintsBinding> 
             Log.i(TAG, "PictureSelector Cancel");
         }
     }
-
-//   private   List<LocalMedia> list = new ArrayList<>();
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
