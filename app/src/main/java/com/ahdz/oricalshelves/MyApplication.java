@@ -14,10 +14,10 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.header.MaterialHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
-
 import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 import cat.ereza.customactivityoncrash.activity.DefaultErrorActivity;
 import cat.ereza.customactivityoncrash.config.CaocConfig;
+import com.ahdz.oricalshelves.BuildConfig;
 
 public class MyApplication extends MultiDexApplication {
     public static MyApplication myApp;
@@ -29,7 +29,7 @@ public class MyApplication extends MultiDexApplication {
 
 
     //  app渠道号,这个应该是在build.gradle里面配置的,这里写死了就行
-    public static String APP_LOCAL_CHANNELCODE = "fups";
+    public static String APP_LOCAL_CHANNELCODE = BuildConfig.FLAVOR;
 
     static {
         //启用矢量图兼容

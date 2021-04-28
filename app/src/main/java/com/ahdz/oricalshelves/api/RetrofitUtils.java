@@ -38,9 +38,7 @@ public abstract class RetrofitUtils {
     private static  Retrofit mRetrofit2 = null;
     private static OkHttpClient mOkHttpClient;
 
-
-//    public static final String BASE_URL =  "http://test-tianxuanyoupin.tianyizhunpin.cn";//
-    public static final String BASE_URL =  "http://yyx.sj.web.saosu.cn";//
+    public static final String BASE_URL =  "https://sj.channel.jigame.cn";//
     private static Gson gson ;
 
     private static Gson getGson() {

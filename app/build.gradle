@@ -59,6 +59,65 @@ android {
         }
         mavenCentral()
     }
+    flavorDimensions 'cp'
+    productFlavors {
+
+        "JRHxVyfhdpCbTuhu" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayiplus"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_name",
+                    app_icon : "@mipmap/ic_splash"
+            ]
+        }
+        "8B5c1ql309nuKS5u" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayiplub"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_namea",
+                    app_icon : "@mipmap/ic_myjb"
+            ]
+        }
+        "W38Jqgl8dDXQ1Ifb" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayipluw"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_nameb",
+                    app_icon : "@mipmap/ic_msyj"
+            ]
+        }
+        "gsyM3zkhAtHtKJgS" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayipluk"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_namec",
+                    app_icon : "@mipmap/ic_xyjq"
+            ]
+        }
+        "NzlFuqzXn0IhYSQP" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayiplun"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_named",
+                    app_icon : "@mipmap/ic_hbjb"
+            ]
+        }
+        "VF6Pj2h6jcwHAf4J" {
+            dimension 'cp'
+            applicationId "com.duoshan.mayipluss"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    app_name : "@string/app_namee",
+                    app_icon : "@mipmap/ic_yqh"
+            ]
+        }
+
+    }
 
 }
 

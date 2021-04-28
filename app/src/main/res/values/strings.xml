@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">优益信</string>
+    <string name="app_name">360蚂蚁应急贷款分期</string>
+    <string name="app_namea">蚂蚁借呗大额信用</string>
+    <string name="app_nameb">马上应急贷款花</string>
+    <string name="app_namec">信用借钱贷款分期</string>
+    <string name="app_named">花呗借呗还呗贷款</string>
+    <string name="app_namee">有钱花应急借钱贷款</string>
     <string name="network_load">loading...</string>
     <string name="save_picture_failed">保存失败</string>
     <string name="save_picture_success">图片成功保存至%s目录</string>

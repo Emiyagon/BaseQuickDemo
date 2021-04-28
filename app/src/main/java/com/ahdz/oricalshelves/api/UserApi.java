@@ -55,7 +55,7 @@ public class UserApi extends BaseNetWork {
         Observable<BaseResponse<String>> toPickBtn(@Body RequestBody requestBody);
 
         /*用户登录*/
-        @POST("/user/api/user/login/sms/shangjia")
+        @POST("/user/api/user/login/sms")
         Observable<BaseResponse<LoginModel>> userLogin(@Body RequestBody requestBody);
 
 

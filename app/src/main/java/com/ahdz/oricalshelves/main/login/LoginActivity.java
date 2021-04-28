@@ -10,9 +10,11 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.ahdz.oricalshelves.MyApplication;
 import com.ahdz.oricalshelves.R;
 import com.ahdz.oricalshelves.base.BaseActivity;
 import com.ahdz.oricalshelves.databinding.ActivityLoginBinding;
+import com.ahdz.oricalshelves.main.detail.MyWebviewActivity;
 import com.ahdz.oricalshelves.view.ImageCode;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -25,6 +27,10 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> implements
 
 
     private LoginPresent mPresenter;
+
+
+    public  String ysUrl = "https://download-api.diaoeng.cn/mayiyingji.html";
+
     @Override
     protected int setLayoutId() {
         return R.layout.activity_login;
@@ -38,11 +44,47 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> implements
         mBindingView.etInputCode.addTextChangedListener(this);
         mBindingView.etPhone.addTextChangedListener(this);
 
+        switch (MyApplication.APP_LOCAL_CHANNELCODE) {
+            default:
+                break;
+            case "JRHxVyfhdpCbTuhu"://360蚂蚁应急贷款分期
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_splash);
+                ysUrl = "https://download-api.diaoeng.cn/mayiyingji.html";
+                break;
+            case "8B5c1ql309nuKS5u"://蚂蚁借呗大额信用
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_myjb);
+                ysUrl = "https://download-api.diaoeng.cn/mayijiebei.html";
+                break;
+            case "W38Jqgl8dDXQ1Ifb"://马上应急贷款花
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_msyj);
+                ysUrl = "https://download-api.diaoeng.cn/mashangyingji.html";
+                break;
+            case "gsyM3zkhAtHtKJgS"://信用借钱贷款分期
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_xyjq);
+                ysUrl = "https://download-api.diaoeng.cn/xinyong.html";
+
+                break;
+            case "NzlFuqzXn0IhYSQP"://花呗借呗还呗贷款
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_hbjb);
+                ysUrl = "https://download-api.diaoeng.cn/huabei.html";
+
+                break;
+            case "VF6Pj2h6jcwHAf4J"://有钱花应急借钱贷款
+                mBindingView.icLogo.setImageResource(R.mipmap.ic_yqh);
+                ysUrl = "https://download-api.diaoeng.cn/youqianhua.html";
+
+                break;
+
+
+
+        }
+
+
         mPresenter.vertifyCode.setValue(mPresenter.imageCode.setBmpCode(mBindingView.imgVertifycode)); //  开局设置一次
 
         //
         mBindingView.text2.setOnClickListener(v -> {
-            mPresenter.OnProtrul();
+            MyWebviewActivity.GoToService(LoginActivity.this, ysUrl,1,"用户协议");
         });
 
         mBindingView.stvLogin.setOnClickListener(v -> {
